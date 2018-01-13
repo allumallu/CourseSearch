@@ -1,0 +1,26 @@
+
+RewriteEngine on
+Options +FollowSymlinks
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^location/([^/]+)$ index.php?page=location&room_name=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^settings/([^/]+)$ index.php?page=settings&user_id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^room_schedule/([^/]+)$ index.php?page=room_schedule&room_name=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^unset_course/([^/]+)$ index.php?page=unset_course&action=delete&id=$1 [L]
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]*)$ index.php?page=$1 [L]
